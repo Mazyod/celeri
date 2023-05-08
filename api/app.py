@@ -25,10 +25,10 @@ async def main():
     while True:
         operation = ["type_a", "type_b"][random.randint(0, 1)]
         print(f"[{task_counter}] Sending {operation} operation to worker...")
-        celery_app.send_task(f"worker.{operation}.operation", args=[task_counter])
+        celery_app.send_task(f"worker.{operation}.operation", args=[task_counter], kwargs=dict(test=True))
         task_counter += 1
 
-        await asyncio.sleep(random.randint(5, 30))
+        await asyncio.sleep(random.randint(2, 10))
 
 
 if __name__ == "__main__":

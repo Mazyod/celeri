@@ -18,11 +18,11 @@ celery_app.conf.task_routes = {
 
 @celery_app.task(name="worker.type_a.operation")
 def type_a_operation(*args, **kwargs):
-    print(f"type_a_operation: {args}")
-    time.sleep(random.randint(10, 40))
+    print(f"type_a_operation: {args}, {kwargs}")
+    time.sleep(random.randint(2, 10))
 
 
 @celery_app.task(name="worker.type_b.operation")
 def type_b_operation(*args, **kwargs):
-    print(f"type_b_operation: {args}")
-    time.sleep(random.randint(10, 40))
+    print(f"type_b_operation: {args}, {kwargs}")
+    time.sleep(random.randint(2, 10))

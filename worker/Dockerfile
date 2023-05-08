@@ -14,4 +14,4 @@ COPY . .
 
 # entrypoint and cmd to run celery worker
 ENTRYPOINT [ "celery" ]
-CMD [ "--app", "app.celery_app", "worker", "--queues", "type_a,type_b", "-l", "info" ]
+CMD [ "--app", "app.celery_app", "worker", "--queues", "type_a,type_b", "-c", "1" "-l", "info" ]
