@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "worker"
+version = "0.1.0"
+description = ""
+authors = ["Maz Jaleel <mazjaleel@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.10"
+celery = {version = "^5.2.7", extras = ["redis"]}
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
